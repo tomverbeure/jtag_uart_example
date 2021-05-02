@@ -1,0 +1,18 @@
+# system info jtag_uart on 2021.05.02.01:16:20
+system_info:
+name,value
+DEVICE,10M50DAF484C6GES
+DEVICE_FAMILY,MAX 10
+GENERATION_ID,1619943379
+#
+#
+# Files generated for jtag_uart on 2021.05.02.01:16:20
+files:
+filepath,kind,attributes,module,is_top
+simulation/jtag_uart.v,VERILOG,,jtag_uart,true
+simulation/submodules/jtag_uart_jtag_uart_0.v,VERILOG,,jtag_uart_jtag_uart_0,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+jtag_uart.jtag_uart_0,jtag_uart_jtag_uart_0

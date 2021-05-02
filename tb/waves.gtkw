@@ -1,0 +1,122 @@
+[*]
+[*] GTKWave Analyzer v3.3.90 (w)1999-2018 BSI
+[*] Sun May  2 09:01:47 2021
+[*]
+[dumpfile] "/home/tom/projects/fpga_quick_ram_update/tb/waves.vcd"
+[dumpfile_mtime] "Sun May  2 09:01:40 2021"
+[dumpfile_size] 1358811
+[savefile] "/home/tom/projects/fpga_quick_ram_update/tb/waves.gtkw"
+[timestart] 9287000
+[size] 2510 1146
+[pos] -1 -1
+*-18.000000 9355000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] tb.
+[treeopen] tb.u_top.
+[treeopen] tb.u_top.u_vex.
+[treeopen] tb.u_top.u_vex.cpu.
+[sst_width] 484
+[signals_width] 443
+[sst_expanded] 1
+[sst_vpaned_height] 723
+@28
+tb.u_top.u_vex.clk
+@200
+-
+@28
+tb.u_top.led0
+tb.u_top.led1
+tb.u_top.led2
+tb.u_top.u_vex.cpu.DebugPlugin_allowEBreak
+tb.u_top.u_vex.cpu.DebugPlugin_haltedByBreak
+@200
+-
+@800200
+-iBus
+@28
+tb.u_top.u_vex.io_iBus_cmd_valid
+@22
+tb.u_top.u_vex.io_iBus_cmd_payload_pc[31:0]
+@8022
+tb.u_top.u_vex.io_iBus_cmd_payload_pc[31:0]
+@200
+-
+@28
+tb.u_top.u_vex.io_iBus_rsp_valid
+@22
+tb.u_top.u_vex.io_iBus_rsp_payload_inst[31:0]
+@1000200
+-iBus
+@200
+-
+@800200
+-dBus
+@28
+tb.u_top.u_vex.cpu.dBus_cmd_valid
+@29
+tb.u_top.dBus_cmd_ready
+@22
+tb.u_top.u_vex.cpu.dBus_cmd_payload_address[31:0]
+@28
+tb.u_top.u_vex.cpu.dBus_cmd_payload_wr
+@22
+tb.u_top.u_vex.cpu.dBus_cmd_payload_data[31:0]
+@28
+tb.u_top.u_vex.cpu.dBus_cmd_payload_size[1:0]
+@200
+-
+@28
+tb.u_top.u_vex.cpu.dBus_rsp_ready
+@22
+tb.u_top.u_vex.cpu.dBus_rsp_data[31:0]
+@1000200
+-dBus
+@200
+-
+@28
+tb.u_top.periph_sel
+@c00022
+tb.u_top.periph_rdata[31:0]
+@28
+(0)tb.u_top.periph_rdata[31:0]
+(1)tb.u_top.periph_rdata[31:0]
+(2)tb.u_top.periph_rdata[31:0]
+(3)tb.u_top.periph_rdata[31:0]
+(4)tb.u_top.periph_rdata[31:0]
+(5)tb.u_top.periph_rdata[31:0]
+(6)tb.u_top.periph_rdata[31:0]
+(7)tb.u_top.periph_rdata[31:0]
+(8)tb.u_top.periph_rdata[31:0]
+(9)tb.u_top.periph_rdata[31:0]
+(10)tb.u_top.periph_rdata[31:0]
+(11)tb.u_top.periph_rdata[31:0]
+(12)tb.u_top.periph_rdata[31:0]
+(13)tb.u_top.periph_rdata[31:0]
+(14)tb.u_top.periph_rdata[31:0]
+(15)tb.u_top.periph_rdata[31:0]
+(16)tb.u_top.periph_rdata[31:0]
+(17)tb.u_top.periph_rdata[31:0]
+(18)tb.u_top.periph_rdata[31:0]
+(19)tb.u_top.periph_rdata[31:0]
+(20)tb.u_top.periph_rdata[31:0]
+(21)tb.u_top.periph_rdata[31:0]
+(22)tb.u_top.periph_rdata[31:0]
+(23)tb.u_top.periph_rdata[31:0]
+(24)tb.u_top.periph_rdata[31:0]
+(25)tb.u_top.periph_rdata[31:0]
+(26)tb.u_top.periph_rdata[31:0]
+(27)tb.u_top.periph_rdata[31:0]
+(28)tb.u_top.periph_rdata[31:0]
+(29)tb.u_top.periph_rdata[31:0]
+(30)tb.u_top.periph_rdata[31:0]
+(31)tb.u_top.periph_rdata[31:0]
+@1401200
+-group_end
+@200
+-
+@28
+tb.u_top.jtag_uart_rd_done
+tb.u_top.mem_rd_done
+tb.u_top.periph_rd_done
+tb.u_top.jtag_uart_waitrequest
+[pattern_trace] 1
+[pattern_trace] 0

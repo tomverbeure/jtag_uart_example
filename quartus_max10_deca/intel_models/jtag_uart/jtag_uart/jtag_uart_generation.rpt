@@ -1,0 +1,72 @@
+Info: Starting: Create simulation model
+Info: qsys-generate /home/tom/projects/fpga_quick_ram_update/quartus_max10_deca_jtag_uart/intel_models/jtag_uart/jtag_uart.qsys --simulation=VERILOG --allow-mixed-language-simulation --output-directory=/home/tom/projects/fpga_quick_ram_update/quartus_max10_deca_jtag_uart/intel_models/jtag_uart/jtag_uart/simulation --family="MAX 10" --part=10M50DAF484C6GES
+Progress: Loading jtag_uart/jtag_uart.qsys
+Progress: Reading input file
+Progress: Adding jtag_uart_0 [altera_avalon_jtag_uart 20.1]
+Progress: Parameterizing module jtag_uart_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Warning: jtag_uart.jtag_uart_0: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Info: jtag_uart: Generating jtag_uart "jtag_uart" for SIM_VERILOG
+Info: jtag_uart_0: Starting RTL generation for module 'jtag_uart_jtag_uart_0'
+Info: jtag_uart_0:   Generation command is [exec /home/tom/altera/20.1/quartus/linux64/perl/bin/perl -I /home/tom/altera/20.1/quartus/linux64/perl/lib -I /home/tom/altera/20.1/quartus/sopc_builder/bin/europa -I /home/tom/altera/20.1/quartus/sopc_builder/bin -I /home/tom/altera/20.1/quartus/../ip/altera/sopc_builder_ip/common -I /home/tom/altera/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /home/tom/altera/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=jtag_uart_jtag_uart_0 --dir=/tmp/alt8749_4407653190256106251.dir/0002_jtag_uart_0_gen/ --quartus_dir=/home/tom/altera/20.1/quartus --verilog --config=/tmp/alt8749_4407653190256106251.dir/0002_jtag_uart_0_gen//jtag_uart_jtag_uart_0_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt8749_4407653190256106251.dir/0002_jtag_uart_0_gen/  ]
+Info: jtag_uart_0: Done RTL generation for module 'jtag_uart_jtag_uart_0'
+Info: jtag_uart_0: "jtag_uart" instantiated altera_avalon_jtag_uart "jtag_uart_0"
+Info: jtag_uart: Done "jtag_uart" with 2 modules, 2 files
+Info: qsys-generate succeeded.
+Info: Finished: Create simulation model
+Info: Starting: Create Modelsim Project.
+Info: sim-script-gen --spd=/home/tom/projects/fpga_quick_ram_update/quartus_max10_deca_jtag_uart/intel_models/jtag_uart/jtag_uart/jtag_uart.spd --output-directory=/home/tom/projects/fpga_quick_ram_update/quartus_max10_deca_jtag_uart/intel_models/jtag_uart/jtag_uart/simulation/ --use-relative-paths=true
+Info: Doing: ip-make-simscript --spd=/home/tom/projects/fpga_quick_ram_update/quartus_max10_deca_jtag_uart/intel_models/jtag_uart/jtag_uart/jtag_uart.spd --output-directory=/home/tom/projects/fpga_quick_ram_update/quartus_max10_deca_jtag_uart/intel_models/jtag_uart/jtag_uart/simulation/ --use-relative-paths=true
+Info: Generating the following file(s) for MODELSIM simulator in /home/tom/projects/fpga_quick_ram_update/quartus_max10_deca_jtag_uart/intel_models/jtag_uart/jtag_uart/simulation/ directory:
+Info: 	mentor/msim_setup.tcl
+Info: Generating the following file(s) for VCS simulator in /home/tom/projects/fpga_quick_ram_update/quartus_max10_deca_jtag_uart/intel_models/jtag_uart/jtag_uart/simulation/ directory:
+Info: 	synopsys/vcs/vcs_setup.sh
+Info: Generating the following file(s) for VCSMX simulator in /home/tom/projects/fpga_quick_ram_update/quartus_max10_deca_jtag_uart/intel_models/jtag_uart/jtag_uart/simulation/ directory:
+Info: 	synopsys/vcsmx/synopsys_sim.setup
+Info: 	synopsys/vcsmx/vcsmx_setup.sh
+Info: Generating the following file(s) for NCSIM simulator in /home/tom/projects/fpga_quick_ram_update/quartus_max10_deca_jtag_uart/intel_models/jtag_uart/jtag_uart/simulation/ directory:
+Info: 	cadence/cds.lib
+Info: 	cadence/hdl.var
+Info: 	cadence/ncsim_setup.sh
+Info: 	1 .cds.lib files in cadence/cds_libs/ directory
+Info: Generating the following file(s) for RIVIERA simulator in /home/tom/projects/fpga_quick_ram_update/quartus_max10_deca_jtag_uart/intel_models/jtag_uart/jtag_uart/simulation/ directory:
+Info: 	aldec/rivierapro_setup.tcl
+Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under /home/tom/projects/fpga_quick_ram_update/quartus_max10_deca_jtag_uart/intel_models/jtag_uart/jtag_uart/simulation/.
+Info: Regenerate these scripts whenever you make any change to any Quartus-generated IP in your project.
+Info: Finished: Create Modelsim Project.
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate /home/tom/projects/fpga_quick_ram_update/quartus_max10_deca_jtag_uart/intel_models/jtag_uart/jtag_uart.qsys --block-symbol-file --output-directory=/home/tom/projects/fpga_quick_ram_update/quartus_max10_deca_jtag_uart/intel_models/jtag_uart/jtag_uart --family="MAX 10" --part=10M50DAF484C6GES
+Progress: Loading jtag_uart/jtag_uart.qsys
+Progress: Reading input file
+Progress: Adding jtag_uart_0 [altera_avalon_jtag_uart 20.1]
+Progress: Parameterizing module jtag_uart_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Warning: jtag_uart.jtag_uart_0: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate /home/tom/projects/fpga_quick_ram_update/quartus_max10_deca_jtag_uart/intel_models/jtag_uart/jtag_uart.qsys --synthesis=VERILOG --output-directory=/home/tom/projects/fpga_quick_ram_update/quartus_max10_deca_jtag_uart/intel_models/jtag_uart/jtag_uart/synthesis --family="MAX 10" --part=10M50DAF484C6GES
+Progress: Loading jtag_uart/jtag_uart.qsys
+Progress: Reading input file
+Progress: Adding jtag_uart_0 [altera_avalon_jtag_uart 20.1]
+Progress: Parameterizing module jtag_uart_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Warning: jtag_uart.jtag_uart_0: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Info: jtag_uart: Generating jtag_uart "jtag_uart" for QUARTUS_SYNTH
+Info: jtag_uart_0: Starting RTL generation for module 'jtag_uart_jtag_uart_0'
+Info: jtag_uart_0:   Generation command is [exec /home/tom/altera/20.1/quartus/linux64/perl/bin/perl -I /home/tom/altera/20.1/quartus/linux64/perl/lib -I /home/tom/altera/20.1/quartus/sopc_builder/bin/europa -I /home/tom/altera/20.1/quartus/sopc_builder/bin -I /home/tom/altera/20.1/quartus/../ip/altera/sopc_builder_ip/common -I /home/tom/altera/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /home/tom/altera/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=jtag_uart_jtag_uart_0 --dir=/tmp/alt8749_4407653190256106251.dir/0004_jtag_uart_0_gen/ --quartus_dir=/home/tom/altera/20.1/quartus --verilog --config=/tmp/alt8749_4407653190256106251.dir/0004_jtag_uart_0_gen//jtag_uart_jtag_uart_0_component_configuration.pl  --do_build_sim=0  ]
+Info: jtag_uart_0: Done RTL generation for module 'jtag_uart_jtag_uart_0'
+Info: jtag_uart_0: "jtag_uart" instantiated altera_avalon_jtag_uart "jtag_uart_0"
+Info: jtag_uart: Done "jtag_uart" with 2 modules, 2 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis
