@@ -1,6 +1,5 @@
 `default_nettype none
 
-//`define ALTSYNCRAM
 `define JTAG_UART
 
 module top(
@@ -105,7 +104,6 @@ module top(
     wire [3:0] mem_wr;
     assign mem_wr = {4{dBus_cmd_valid && !dBus_cmd_payload_address[31] && dBus_cmd_payload_wr}} & dBus_be;
 
-`ifndef ALTSYNCRAM
     // Instead of inferring 1 32-bit wide RAM with 4 byte enables, infer
     // 4 8-bit wide RAMs. Many synthesis tools have issues with inferring RAMs with byte enables. 
     // Quartus, for example, only supports them with SystemVerilog, not
@@ -168,116 +166,6 @@ module top(
         else 
             mem_rdata[31:24]  <= mem3[dBus_cmd_payload_address[mem_addr_bits-1:2]];
     end
-`else
-    // altsyncram is the Intel synchronous RAM primitive. This code will only
-    // work on Intel FPGAs.
-    // Most Intel FPGAs have block RAMs that have byte-enable support, so the
-    // 4 8-bit RAMs below could have been replaced by just 1 32-bit RAM...
-
-	altsyncram #(
-        .operation_mode   ("BIDIR_DUAL_PORT"),
-        .widthad_a        (mem_addr_bits-2),
-        .widthad_b        (mem_addr_bits-2),
-        .width_a          (8),
-        .width_b          (8),
-        .outdata_reg_a    ("UNREGISTERED"),
-        .outdata_reg_b    ("UNREGISTERED"),
-        .init_file        ("../sw/progmem0.mif")
-    )
-    u_mem0 (
-                .clock0             (clk),
-                .wren_a             (1'b0),
-                .rden_a             (1'b1),
-                .address_a          (iBus_cmd_payload_pc[mem_addr_bits-1:2]),
-                .data_a             (8'd0),
-                .q_a                (iBus_rsp_payload_inst[7:0]),
-
-                .clock1             (clk),
-                .address_b          (dBus_cmd_payload_address[mem_addr_bits-1:2]),
-                .wren_b             (mem_wr[0]),
-                .rden_b             (1'b1),
-                .data_b             (dBus_wdata[7:0]),
-                .q_b                (mem_rdata[7:0])
-            );
-
-	altsyncram #(
-        .operation_mode   ("BIDIR_DUAL_PORT"),
-        .widthad_a        (mem_addr_bits-2),
-        .widthad_b        (mem_addr_bits-2),
-        .width_a          (8),
-        .width_b          (8),
-        .outdata_reg_a    ("UNREGISTERED"),
-        .outdata_reg_b    ("UNREGISTERED"),
-        .init_file        ("../sw/progmem1.mif")
-    )
-    u_mem1 (
-                .clock0             (clk),
-                .wren_a             (1'b0),
-                .rden_a             (1'b1),
-                .address_a          (iBus_cmd_payload_pc[mem_addr_bits-1:2]),
-                .data_a             (8'd0),
-                .q_a                (iBus_rsp_payload_inst[15:8]),
-
-                .clock1             (clk),
-                .address_b          (dBus_cmd_payload_address[mem_addr_bits-1:2]),
-                .wren_b             (mem_wr[1]),
-                .rden_b             (1'b1),
-                .data_b             (dBus_wdata[15:8]),
-                .q_b                (mem_rdata[15:8])
-            );
-
-	altsyncram #(
-        .operation_mode   ("BIDIR_DUAL_PORT"),
-        .widthad_a        (mem_addr_bits-2),
-        .widthad_b        (mem_addr_bits-2),
-        .width_a          (8),
-        .width_b          (8),
-        .outdata_reg_a    ("UNREGISTERED"),
-        .outdata_reg_b    ("UNREGISTERED"),
-        .init_file        ("../sw/progmem2.mif")
-    )
-    u_mem2 (
-                .clock0             (clk),
-                .wren_a             (1'b0),
-                .rden_a             (1'b1),
-                .address_a          (iBus_cmd_payload_pc[mem_addr_bits-1:2]),
-                .data_a             (8'd0),
-                .q_a                (iBus_rsp_payload_inst[23:16]),
-
-                .clock1             (clk),
-                .address_b          (dBus_cmd_payload_address[mem_addr_bits-1:2]),
-                .wren_b             (mem_wr[2]),
-                .rden_b             (1'b1),
-                .data_b             (dBus_wdata[23:16]),
-                .q_b                (mem_rdata[23:16])
-            );
-
-	altsyncram #(
-        .operation_mode   ("BIDIR_DUAL_PORT"),
-        .widthad_a        (mem_addr_bits-2),
-        .widthad_b        (mem_addr_bits-2),
-        .width_a          (8),
-        .width_b          (8),
-        .outdata_reg_a    ("UNREGISTERED"),
-        .outdata_reg_b    ("UNREGISTERED"),
-        .init_file        ("../sw/progmem3.mif")
-    )
-    u_mem3 (
-                .clock0             (clk),
-                .wren_a             (1'b0),
-                .rden_a             (1'b1),
-                .address_a          (iBus_cmd_payload_pc[mem_addr_bits-1:2]),
-                .data_a             (8'd0),
-                .q_a                (iBus_rsp_payload_inst[31:24]),
-
-                .clock1             (clk),
-                .address_b          (dBus_cmd_payload_address[mem_addr_bits-1:2]),
-                .wren_b             (mem_wr[3]),
-                .rden_b             (1'b1),
-                .data_b             (dBus_wdata[31:24]),
-                .q_b                (mem_rdata[31:24])
-            );
-`endif
 
     //============================================================
     // Non-memory data accesses

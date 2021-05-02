@@ -1,12 +1,12 @@
 
-# FPGA Quick RAM Update Example
+# Intel FPGA JTAG UART Example 
 
 This project contains a simple design with a VexRiscv CPU, a bit
 of RAM, a control register to set the value of 3 LEDs and a status
-register to read back the value of a button.
+register to read back the value of a button, and a JTAG UART.
 
 It's an example design that goes with my 
-[A Hack to Update RAM Initialization Contents in Intel FPGA Bitstreams](https://tomverbeure.github.io/2021/04/25/Intel-FPGA-RAM-Bitstream-Patching.html)
+[The Intel JTAG UART - Add a Console to Your Design without Adding IO Pins](https://tomverbeure.github.io//2021/05/01/Intel-JTAG-UART.html)
 blog post.
 
 ## Contents
@@ -20,6 +20,10 @@ blog post.
 
     A small C project that toggles 3 LEDs in sequence. When a button in 
     pressed, the LEDs toggle at double the speed.
+
+    When the design is loaded into an FPGA, doing `nios2-terminal` will print
+    a "Hello World!" message, and pressing 'r' will reverse the order in which
+    LEDs are toggled.
 
     Do `make` to create a firmware image.
 
@@ -43,10 +47,6 @@ blog post.
     This makefile can trivially be adapted for projects that use different
     versions of Quartus, and for different designs.
 
-    The method of updating the RAM has been confirmed to work for Quartus
-    13.0sp1 (the last version that supports Cyclone II devices), Quartus
-    17, Quartus 18, Quartus 19 and Quartus 20.
-
 * `./misc`
 
     Contains helps scripts. In this case, the `create_mif.rb` script which converts
@@ -55,6 +55,10 @@ blog post.
 ## Required software
 
 * Intel Quartus  
+
+    Make sure that the Nios2 SDK is installed, because you need `nios2-terminal` to
+    connected to the JTAG UART.
+
 * RISC-V GCC toolchain to compile a firmware image
 
     Precompiled binaries can be downloaded [here](https://github.com/sifive/freedom-tools/releases).

@@ -63,8 +63,6 @@ main.c: top_defines.h
 jtag_uart:
 	$(QUARTUS_ROOTDIR)/bin/nios2-terminal
 
-
-
 clean:
 	\rm -fr *.o *.hex *.elf *.dis *.bin *.coe *.map *.mif *.mem *.funcs *.globs
 
