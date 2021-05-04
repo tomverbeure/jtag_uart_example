@@ -40,8 +40,10 @@ int jtag_uart_rx_get_char(uint8_t *c)
     if (!has_jtag_uart())
         return 0;
 
-    if (REG_RD_FIELD(JTAG_UART_DATA, RVALID)){
-        *c = REG_RD_FIELD(JTAG_UART_DATA, DATA);
+    int data = REG_RD(JTAG_UART_DATA);
+
+    if ( ((data >> JTAG_UART_DATA_RVALID_FIELD_START)&1) ){
+        *c = data & 255;
         return 1UL;
     }
     else{
