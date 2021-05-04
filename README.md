@@ -73,6 +73,9 @@ blog post.
 
 ## License
 
-See LICENSE. Use this anyway you want, except for `./rtl/VexRiscv.v`, which is released
-under [the MIT license](https://github.com/SpinalHDL/VexRiscv/blob/master/LICENSE).
+See LICENSE. Use this anyway you want, except for: 
+
+* `./rtl/VexRiscv.v`, which is released under [the MIT license](https://github.com/SpinalHDL/VexRiscv/blob/master/LICENSE).
+* `./c_client`, which is also released under the MIT license.
+
 
