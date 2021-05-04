@@ -6,7 +6,7 @@ of RAM, a control register to set the value of 3 LEDs and a status
 register to read back the value of a button, and a JTAG UART.
 
 It's an example design that goes with my 
-[The Intel JTAG UART - Add a Console to Your Design without Adding IO Pins](https://tomverbeure.github.io//2021/05/01/Intel-JTAG-UART.html)
+[The Intel JTAG UART - Add a Serial Console to Your Design without Extra IO Pins](https://tomverbeure.github.io//2021/05/01/Intel-JTAG-UART.html)
 blog post.
 
 ## Contents

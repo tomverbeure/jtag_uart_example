@@ -35,20 +35,24 @@ int main()
     while(1){
         int wait_time = REG_RD_FIELD(STATUS, BUTTON) ? 200 : 100;
 
-        unsigned char c;
-        if (jtag_uart_rx_get_char(&c) != 0){
-            jtag_uart_tx_str("Command: ");
-            jtag_uart_tx_char(c);
-            jtag_uart_tx_char('\n');
+        int ret;
+        do{
+            unsigned char c;
+            ret = jtag_uart_rx_get_char(&c);
+            if (ret != 0){
+                jtag_uart_tx_str("Command: ");
+                jtag_uart_tx_char(c);
+                jtag_uart_tx_char('\n');
 
-            if (c == 'r'){
-                jtag_uart_tx_str("Reversing LED sequence...\n");            
-                reverse_dir ^= 1;
+                if (c == 'r'){
+                    jtag_uart_tx_str("Reversing LED sequence...\n");            
+                    reverse_dir ^= 1;
+                }
+                else{
+                    help();
+                }
             }
-            else{
-                help();
-            }
-        }
+        } while(ret != 0);
 
         if (reverse_dir){
             REG_WR(LED_CONFIG, 0x04);
