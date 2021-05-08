@@ -6,8 +6,10 @@ of RAM, a control register to set the value of 3 LEDs and a status
 register to read back the value of a button, and a JTAG UART.
 
 It's an example design that goes with my 
-[The Intel JTAG UART - Add a Serial Console to Your Design without Extra IO Pins](https://tomverbeure.github.io//2021/05/02/Intel-JTAG-UART.html)
-blog post.
+[The Intel JTAG UART - Add a Serial Console to Your Design without Extra IO Pins](https://tomverbeure.github.io/2021/05/02/Intel-JTAG-UART.html)
+and
+[Write Your Own C and Python Clients for the Intel JTAG UART](https://tomverbeure.github.io/2021/05/07/Write-Your-Own-C-and-Python-Clients-for-Intel-JTAG-UART-with-libjtag_atlantic.html)
+blog posts.
 
 ## Contents
 
@@ -52,6 +54,16 @@ blog post.
     Contains helps scripts. In this case, the `create_mif.rb` script which converts
     binary files into MIF file (and other formats as well...)
 
+* [`./c_client`](./c_client)
+
+    Shows how to use Intel's `jtag_atlantic` shared library to create your own
+    JTAG UART clients in C. 
+
+* `./py_client`
+
+    Uses my [intel-jtag-uart](https://pypi.org/project/intel-jtag-uart/) to create
+    a JTAG UART client in Python.
+
 ## Required software
 
 * Intel Quartus  
@@ -76,6 +88,7 @@ blog post.
 See LICENSE. Use this anyway you want, except for: 
 
 * `./rtl/VexRiscv.v`, which is released under [the MIT license](https://github.com/SpinalHDL/VexRiscv/blob/master/LICENSE).
-* `./c_client`, which is also released under the MIT license.
+* `./c_client`, also released under the MIT license.
+* `./py_client`,also released under the MIT license.
 
 
