@@ -8,7 +8,7 @@ register to read back the value of a button, and a JTAG UART.
 It's an example design that goes with my 
 [The Intel JTAG UART - Add a Serial Console to Your Design without Extra IO Pins](https://tomverbeure.github.io/2021/05/02/Intel-JTAG-UART.html)
 and
-[Write Your Own C and Python Clients for the Intel JTAG UART](https://tomverbeure.github.io/2021/05/07/Write-Your-Own-C-and-Python-Clients-for-Intel-JTAG-UART-with-libjtag_atlantic.html)
+[Write Your Own C and Python Clients for the Intel JTAG UART](https://tomverbeure.github.io/2021/05/08/Write-Your-Own-C-and-Python-Clients-for-Intel-JTAG-UART-with-libjtag_atlantic.html)
 blog posts.
 
 ## Contents
