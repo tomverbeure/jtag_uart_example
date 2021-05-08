@@ -61,7 +61,7 @@ blog posts.
 
 * `./py_client`
 
-    Uses my [intel-jtag-uart](https://pypi.org/project/intel-jtag-uart/) to create
+    Uses my [`intel-jtag-uart`](https://pypi.org/project/intel-jtag-uart/) package to create
     a JTAG UART client in Python.
 
 ## Required software
